@@ -4,8 +4,10 @@ body {
 
 footer {
     background-color: white;
-    text-align: center;
+    justify-content: center;
     color:  rgb(104, 214, 80);
+    position: absolute;
+    bottom: 0;
 }
 
 .jumbotron {
@@ -17,6 +19,7 @@ footer {
 .input-group{
     width:50%;
 }
+
 .searchHistory{
     font-size: 20px;
 }
