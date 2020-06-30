@@ -1,6 +1,25 @@
+body {
+    background-color:  rgb(246, 255, 249);
+}
+
+footer {
+    background-color: white;
+    justify-content: center;
+    color:  rgb(104, 214, 80);
+    position: absolute;
+    bottom: 0;
+}
+
+.jumbotron {
+    background-color: white;
+    color: rgb(104, 214, 80);
+    text-align: left;
+}
+
 .input-group{
     width:50%;
 }
+
 .searchHistory{
     font-size: 20px;
 }
