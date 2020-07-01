@@ -11,7 +11,7 @@ var yelpSearch = "cheese";
 var yelpQueryURL = "https://api.yelp.com/v3/businesses/search?term=" + yelpSearch + "&limit=5&location=Austin,TX";
 
 recipeBtn.on("click", function(){
-    $("#searchResults").attr("style", "display:visible;");
+    $("#searchResults").attr("style", "display: visible;");
     $.ajax({
         url: spoonQueryURL,
         method: "GET"
@@ -26,7 +26,7 @@ recipeBtn.on("click", function(){
 })
 
 restaurantBtn.on("click", function(){
-    
+    $("#searchResults").attr("style", "display: visible;");
     $.ajax({
         url: "https://cors-ut-bootcamp.herokuapp.com/" + yelpQueryURL,
         method: "GET",
@@ -39,6 +39,6 @@ restaurantBtn.on("click", function(){
         for (var i = 1; i <= response.businesses.length; i++){
             $("#Result" + i).text(response.businesses[i-1].name);
         }
-
+       
     })
 })
