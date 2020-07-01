@@ -9,29 +9,29 @@ var yelpApiKey = "gHLb0y1DUUd4SfZtMn8zxnMMFKbzRHu76kPiYmq6YRxho6kU4EY-5c_9OF9k-2
 var yelpSearch = "cheese";
 var yelpQueryURL = "https://api.yelp.com/v3/businesses/search?term=" + yelpSearch + "&limit=5&location=Austin,TX";
 
-recipeBtn.on("click", function(){
+recipeBtn.on("click", function () {
     $("#searchResults").attr("style", "display: visible;");
     $.ajax({
         url: spoonQueryURL,
         method: "GET"
-    }).then(function(response){
+    }).then(function (response) {
         console.log(response);
 
         for (var i = 1; i <= response.results.length; i++) {
-            var recipeImage = $("<img src='' alt='' id='recipeImage" + i +"' style='border-radius: 50%; margin: 5px;'>");
-            var fileExtension = response.results[i-1].image.split(".").pop();
-            
-            recipeImage.attr("src", "https://spoonacular.com/recipeImages/" + response.results[i-1].id + "-90x90." + fileExtension);
-            
+            var recipeImage = $("<img src='' alt='' id='recipeImage" + i + "' style='border-radius: 50%; margin: 5px;'>");
+            var fileExtension = response.results[i - 1].image.split(".").pop();
 
-            $("#Result" + i).text(" " + response.results[i-1].title);
+            recipeImage.attr("src", "https://spoonacular.com/recipeImages/" + response.results[i - 1].id + "-90x90." + fileExtension);
+
+
+            $("#Result" + i).text(" " + response.results[i - 1].title);
             $("#Result" + i).prepend($(recipeImage));
         }
 
     })
 })
 
-restaurantBtn.on("click", function(){
+restaurantBtn.on("click", function () {
     $("#searchResults").attr("style", "display: visible;");
     $.ajax({
         url: "https://cors-ut-bootcamp.herokuapp.com/" + yelpQueryURL,
@@ -39,12 +39,19 @@ restaurantBtn.on("click", function(){
         headers: {
             "Authorization": "Bearer " + yelpApiKey
         }
-    }).then(function(response){
+    }).then(function (response) {
         console.log(response);
 
-        for (var i = 1; i <= response.businesses.length; i++){
-            $("#Result" + i).text(response.businesses[i-1].name);
+        for (var i = 1; i <= response.businesses.length; i++) {
+            var restaurantImage = $("<img src='' alt='' id='restaurantImage" + i + "' style= 'max-height: 90px; max-width: 90px; height: auto; width: auto; border-radius: 50%; margin: 5px;'>");
+
+
+            restaurantImage.attr("src", response.businesses[i - 1].image_url);
+
+
+            $("#Result" + i).text(response.businesses[i - 1].name);
+            $("#Result" + i).prepend($(restaurantImage));
         }
-       
+
     })
 })
