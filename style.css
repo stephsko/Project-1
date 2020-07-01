@@ -32,10 +32,6 @@ footer {
 }
 #searchResults {
     background-color: whitesmoke;
-    width:30%;
-}
-
-#searchResults {
     margin: auto;
     width: 50%;   
 }
