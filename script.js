@@ -25,6 +25,7 @@ recipeBtn.on("click", function(){
 })
 
 restaurantBtn.on("click", function(){
+    $("#searchResults").attr("style", "display: visible;");
     $.ajax({
         url: "https://cors-ut-bootcamp.herokuapp.com/" + yelpQueryURL,
         method: "GET",
@@ -37,6 +38,6 @@ restaurantBtn.on("click", function(){
         for (var i = 1; i <= response.businesses.length; i++){
             $("#Result" + i).text(response.businesses[i-1].name);
         }
-
+       
     })
 })
