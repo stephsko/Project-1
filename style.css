@@ -1,6 +1,7 @@
 body {
     background-color:  rgb(246, 255, 249);
     background-image: url("denise-van-der-heide-uDM1PZe4OE8-unsplash (1).jpg");
+    clear: both;
 }
 
 footer {
@@ -33,5 +34,12 @@ footer {
 #searchResults {
     background-color: whitesmoke;
     margin: auto;
-    width: 50%;   
+    margin-bottom: 70px;
+    width: 50%; 
+    
+      
+}
+#footer{
+    position: fixed;
+    margin-bottom: 0;
 }
