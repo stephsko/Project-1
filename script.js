@@ -28,5 +28,17 @@ restaurantBtn.on("click", function(){
         }
     }).then(function(response){
         console.log(response);
+
+        for (var i = 1; i <= response.businesses.length; i++){
+            $("#Result" + i).text(response.businesses[i-1].name);
+        }
+        console.log(response.businesses[0].name);
+        console.log(response.businesses[1].name);
+        console.log(response.businesses[2].name);
+        console.log(response.businesses[3].name);
+        console.log(response.businesses[4].name);
+
+       
+
     })
 })
