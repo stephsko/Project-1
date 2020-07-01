@@ -28,5 +28,7 @@ footer {
     font-size: 20px;
 }
 
-
-    
+#searchResults {
+    margin: auto;
+    width: 50%;   
+}
