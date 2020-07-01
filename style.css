@@ -1,26 +1,32 @@
 body {
     background-color:  rgb(246, 255, 249);
+    background-image: url("denise-van-der-heide-uDM1PZe4OE8-unsplash (1).jpg");
 }
 
 footer {
     background-color: white;
-    justify-content: center;
+    font-size: 30px;
     color:  rgb(104, 214, 80);
     position: absolute;
     bottom: 0;
+    Width: 100%;
+    text-align: center;
 }
 
 .jumbotron {
     background-color: white;
     color: rgb(104, 214, 80);
     text-align: left;
+    
 }
 
 .input-group{
-    width:50%;
+    width:100%;
 }
 
 .searchHistory{
     font-size: 20px;
 }
+
+
     
