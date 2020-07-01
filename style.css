@@ -35,5 +35,7 @@ footer {
     width:30%;
 }
 
-
-    
+#searchResults {
+    margin: auto;
+    width: 50%;   
+}
