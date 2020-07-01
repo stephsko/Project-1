@@ -33,12 +33,10 @@ restaurantBtn.on("click", function(){
         }
     }).then(function(response){
         console.log(response);
-        console.log(response.businesses[0].name);
 
-        // $("#Result1").text(response.businesses[0].name);
-        // $("#Result2").text(response.businesses[1].name);
-        // $("#Result3").text(response.businesses[2].name);
-        // $("#Result4").text(response.businesses[3].name);
-        // $("#Result5").text(response.businesses[4].name);
+        for (var i = 1; i <= response.businesses.length; i++){
+            $("#Result" + i).text(response.businesses[i-1].name);
+        }
+
     })
 })
