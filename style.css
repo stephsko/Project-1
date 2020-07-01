@@ -16,8 +16,11 @@ footer {
 .jumbotron {
     background-color: white;
     color: rgb(104, 214, 80);
-    text-align: left;
-    
+    text-align: center;
+}
+
+.jumbotron-fluid {
+    padding: 0em 0em;
 }
 
 .input-group{
@@ -26,6 +29,10 @@ footer {
 
 .searchHistory{
     font-size: 20px;
+}
+#searchResults {
+    background-color: whitesmoke;
+    width:30%;
 }
 
 
