@@ -2,7 +2,6 @@ var recipeBtn = $("#button-addon1");
 var restaurantBtn = $("#button-addon2");
 
 var ingredient = "cheese";
-
 var spoonApiKey = "73753e2422a4438c8dcb28a382d66b82";
 var spoonQueryURL = "https://api.spoonacular.com/recipes/search?apiKey=" + spoonApiKey + "&query=" + ingredient + "&number=5";
 
@@ -19,7 +18,14 @@ recipeBtn.on("click", function(){
         console.log(response);
 
         for (var i = 1; i <= response.results.length; i++) {
-            $("#Result" + i).text(response.results[i-1].title);
+            var recipeImage = $("<img src='' alt='' id='recipeImage" + i +"'>");
+            var fileExtension = response.results[i-1].image.split(".").pop();
+            
+            recipeImage.attr("src", "https://spoonacular.com/recipeImages/" + response.results[i-1].id + "-90x90." + fileExtension);
+            
+
+            $("#Result" + i).text(" " + response.results[i-1].title);
+            $("#Result" + i).prepend($(recipeImage));
         }
 
     })
