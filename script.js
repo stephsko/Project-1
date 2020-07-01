@@ -11,6 +11,7 @@ var yelpSearch = "cheese";
 var yelpQueryURL = "https://api.yelp.com/v3/businesses/search?term=" + yelpSearch + "&limit=5&location=Austin,TX";
 
 recipeBtn.on("click", function(){
+    $("#searchResults").attr("style", "display: visible;");
     $.ajax({
         url: spoonQueryURL,
         method: "GET"
