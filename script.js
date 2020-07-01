@@ -1,15 +1,14 @@
 var recipeBtn = $("#button-addon1");
 var restaurantBtn = $("#button-addon2");
+var searchEl = $("#textInput");
 
-var ingredient = "cheese";
-var spoonApiKey = "73753e2422a4438c8dcb28a382d66b82";
-var spoonQueryURL = "https://api.spoonacular.com/recipes/search?apiKey=" + spoonApiKey + "&query=" + ingredient + "&number=5";
 
-var yelpApiKey = "gHLb0y1DUUd4SfZtMn8zxnMMFKbzRHu76kPiYmq6YRxho6kU4EY-5c_9OF9k-2jUnl8MbrJk-9V-jijay4pKZQRyaFnxcfB8ufplveLn5pYWthT-WAtN_9bkUGf7XnYx";
-var yelpSearch = "cheese";
-var yelpQueryURL = "https://api.yelp.com/v3/businesses/search?term=" + yelpSearch + "&limit=5&location=Austin,TX";
+recipeBtn.on("click", function(){
+    var ingredientSearch = (searchEl.val());
 
-recipeBtn.on("click", function () {
+    var spoonApiKey = "73753e2422a4438c8dcb28a382d66b82";
+    var spoonQueryURL = "https://api.spoonacular.com/recipes/search?apiKey=" + spoonApiKey + "&query=" + ingredientSearch + "&number=5";
+   
     $("#searchResults").attr("style", "display: visible;");
     $.ajax({
         url: spoonQueryURL,
@@ -18,6 +17,7 @@ recipeBtn.on("click", function () {
         console.log(response);
 
         for (var i = 1; i <= response.results.length; i++) {
+            $("#Restult" + i).text("");
             var recipeImage = $("<img src='' alt='' id='recipeImage" + i + "' style='border-radius: 50%; margin: 5px;'>");
             var fileExtension = response.results[i - 1].image.split(".").pop();
 
@@ -32,6 +32,11 @@ recipeBtn.on("click", function () {
 })
 
 restaurantBtn.on("click", function () {
+
+    var yelpApiKey = "gHLb0y1DUUd4SfZtMn8zxnMMFKbzRHu76kPiYmq6YRxho6kU4EY-5c_9OF9k-2jUnl8MbrJk-9V-jijay4pKZQRyaFnxcfB8ufplveLn5pYWthT-WAtN_9bkUGf7XnYx";
+    var yelpSearch = (searchEl.val());
+    var yelpQueryURL = "https://api.yelp.com/v3/businesses/search?term=" + yelpSearch + "&limit=5&location=Austin,TX";
+
     $("#searchResults").attr("style", "display: visible;");
     $.ajax({
         url: "https://cors-ut-bootcamp.herokuapp.com/" + yelpQueryURL,
@@ -43,7 +48,9 @@ restaurantBtn.on("click", function () {
         console.log(response);
 
         for (var i = 1; i <= response.businesses.length; i++) {
-            var restaurantImage = $("<img src='' alt='' id='restaurantImage" + i + "' style= 'max-height: 90px; max-width: 90px; height: auto; width: auto; border-radius: 50%; margin: 5px;'>");
+            $("#Restult" + i).text("");
+            
+            var restaurantImage = $("<img src='' alt='' id='restaurantImage" + i + "' style= 'height: 90px; width: 90px; border-radius: 50%; margin: 5px;'>");
 
 
             restaurantImage.attr("src", response.businesses[i - 1].image_url);
