@@ -18,7 +18,7 @@ recipeBtn.on("click", function(){
         console.log(response);
 
         for (var i = 1; i <= response.results.length; i++) {
-            var recipeImage = $("<img src='' alt='' id='recipeImage" + i +"'>");
+            var recipeImage = $("<img src='' alt='' id='recipeImage" + i +"' style='border-radius: 50%; margin: 5px;'>");
             var fileExtension = response.results[i-1].image.split(".").pop();
             
             recipeImage.attr("src", "https://spoonacular.com/recipeImages/" + response.results[i-1].id + "-90x90." + fileExtension);
