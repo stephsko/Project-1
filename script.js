@@ -16,6 +16,11 @@ recipeBtn.on("click", function(){
         method: "GET"
     }).then(function(response){
         console.log(response);
+
+        for (var i = 1; i <= response.results.length; i++) {
+            $("#Result" + i).text(response.results[i-1].title);
+        }
+
     })
 })
 
@@ -28,5 +33,12 @@ restaurantBtn.on("click", function(){
         }
     }).then(function(response){
         console.log(response);
+        console.log(response.businesses[0].name);
+
+        // $("#Result1").text(response.businesses[0].name);
+        // $("#Result2").text(response.businesses[1].name);
+        // $("#Result3").text(response.businesses[2].name);
+        // $("#Result4").text(response.businesses[3].name);
+        // $("#Result5").text(response.businesses[4].name);
     })
 })
