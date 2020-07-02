@@ -33,12 +33,17 @@ footer {
     font-size: 20px;
     transition: width 2s, height 2s, transform 2s;
 }
+
+.btn-block {
+    background-color: lightgray;
+    text-align: left;
+}
+
 #searchResults {
-    background-color: whitesmoke ;
+    background-color: transparent;
     margin: auto;
     margin-bottom: 70px;
     width: 50%; 
-
 }
 
 
