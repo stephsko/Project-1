@@ -65,5 +65,21 @@ restaurantBtn.on("click", function () {
             $("#Result" + i).prepend($(restaurantImage));
         }
 
+
     })
+
 })
+
+$('.modal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+
+$('#Result1, #Result2, #Result3, #Result4, #Result5').on("click", function(){
+    
+    $('.modal').modal('show'); 
+})
+
+
+function populateModal(response) {
+
+}
