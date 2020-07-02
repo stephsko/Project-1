@@ -31,13 +31,13 @@ footer {
 
 .searchHistory{
     font-size: 20px;
-    transition: width 2s, height 2s, transform 2s;
 }
 
 .btn-block {
     background-color: lightgray;
     text-align: left;
 }
+
 
 #searchResults {
     background-color: transparent;
@@ -55,7 +55,7 @@ footer {
     } 
     .col-12 {
         display: flex;
-        overflow-x: scroll;
+        
     }
     .footer {
         font-size: 20px;

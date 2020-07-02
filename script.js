@@ -119,4 +119,17 @@ restaurantBtn.on("click", function () {
 
 $('.modal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
+<<<<<<< HEAD
   })
+
+$('#Result1, #Result2, #Result3, #Result4, #Result5').on("click", function(){
+    $('.modal').modal('show'); 
+})
+
+
+function populateModal(response) {
+
+}
+=======
+  })
+>>>>>>> 074b67846d1b8dcc83a331e8e540bb9eb7f275b0
