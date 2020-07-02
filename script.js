@@ -75,7 +75,6 @@ $('.modal').on('shown.bs.modal', function () {
   })
 
 $('#Result1, #Result2, #Result3, #Result4, #Result5').on("click", function(){
-    
     $('.modal').modal('show'); 
 })
 
