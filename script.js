@@ -2,12 +2,54 @@ var recipeBtn = $("#button-addon1");
 var restaurantBtn = $("#button-addon2");
 var searchEl = $("#textInput");
 
+var modalTitle = $(".modal-title");
+var modalImage = $("#modalImage");
+var modalDescription = $("#modalDescription");
+var modalLink = $("#modalLink");
+var modalDescription2 = $("#modalDescription2");
+
+function populateRecipeModal(response, button) {
+    modalTitle.empty();
+    modalImage.empty();
+    modalDescription.empty();
+
+    var id = 0;
+
+    if (button.id === "Result1") {
+        id = 1;
+    } else if (button.id === "Result2") {
+        id = 2;
+    } else if (button.id === "Result3") {
+        id = 3;
+    } else if (button.id === "Result4") {
+        id = 4;
+    } else if (button.id === "Result5") {
+        id = 5;
+    }
+
+    var recipeURL = response.results[id-1].sourceUrl;
+
+    var modalImageEl = $("<img src='' alt='' id='" + button.id + "' style='border-radius: 50%; margin: 5px;'>");
+    var fileExtension = response.results[id - 1].image.split(".").pop();
+
+    modalImageEl.attr("src", "https://spoonacular.com/recipeImages/" + response.results[id - 1].id + "-90x90." + fileExtension);
+    
+
+    modalTitle.text(response.results[id - 1].title);
+    modalImage.prepend(modalImageEl);  
+    modalDescription.text("Ready in: " + response.results[id -1].readyInMinutes + " minutes.");
+    modalDescription2.text("Serves: " + response.results[id - 1].servings);
+    modalLink.attr("href", recipeURL).text("Recipe!");
+    
+    
+}
+
 
 recipeBtn.on("click", function(){
     var ingredientSearch = (searchEl.val());
 
     var spoonApiKey = "73753e2422a4438c8dcb28a382d66b82";
-    var spoonQueryURL = "https://api.spoonacular.com/recipes/search?apiKey=" + spoonApiKey + "&query=" + ingredientSearch + "&number=5";
+    var spoonQueryURL = "https://api.spoonacular.com/recipes/search?apiKey=" + spoonApiKey + "&query=" + ingredientSearch + "&offset=1&number=5";
    
     $("#searchResults").attr("style", "display: block;");
     $.ajax({
@@ -30,6 +72,12 @@ recipeBtn.on("click", function(){
             $("#Result" + i).text(" " + response.results[i - 1].title);
             $("#Result" + i).prepend($(recipeImage));
         }
+
+        $('#Result1, #Result2, #Result3, #Result4, #Result5').on("click", function(){
+            populateRecipeModal(response, event.currentTarget);
+            $('.modal').modal('show'); 
+            
+        })
 
     })
 })
@@ -65,13 +113,13 @@ restaurantBtn.on("click", function () {
             $("#Result" + i).prepend($(restaurantImage));
         }
 
-
     })
 
 })
 
 $('.modal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
+<<<<<<< HEAD
   })
 
 $('#Result1, #Result2, #Result3, #Result4, #Result5').on("click", function(){
@@ -82,3 +130,6 @@ $('#Result1, #Result2, #Result3, #Result4, #Result5').on("click", function(){
 function populateModal(response) {
 
 }
+=======
+  })
+>>>>>>> 074b67846d1b8dcc83a331e8e540bb9eb7f275b0
