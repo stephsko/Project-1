@@ -9,7 +9,7 @@ recipeBtn.on("click", function(){
     var spoonApiKey = "73753e2422a4438c8dcb28a382d66b82";
     var spoonQueryURL = "https://api.spoonacular.com/recipes/search?apiKey=" + spoonApiKey + "&query=" + ingredientSearch + "&number=5";
    
-    $("#searchResults").attr("style", "display: visible;");
+    $("#searchResults").attr("style", "display: block;");
     $.ajax({
         url: spoonQueryURL,
         method: "GET"
@@ -17,7 +17,10 @@ recipeBtn.on("click", function(){
         console.log(response);
 
         for (var i = 1; i <= response.results.length; i++) {
-            $("#Restult" + i).text("");
+            if (ingredientSearch == "") {
+                $("#searchResults").attr("style", "display: none;");
+                break;
+            }
             var recipeImage = $("<img src='' alt='' id='recipeImage" + i + "' style='border-radius: 50%; margin: 5px;'>");
             var fileExtension = response.results[i - 1].image.split(".").pop();
 
@@ -36,7 +39,7 @@ restaurantBtn.on("click", function () {
     var yelpSearch = (searchEl.val());
     var yelpQueryURL = "https://api.yelp.com/v3/businesses/search?term=" + yelpSearch + "&limit=5&location=Austin,TX";
 
-    $("#searchResults").attr("style", "display: visible;");
+    $("#searchResults").attr("style", "display: block;");
     $.ajax({
         url: "https://cors-ut-bootcamp.herokuapp.com/" + yelpQueryURL,
         method: "GET",
@@ -47,7 +50,10 @@ restaurantBtn.on("click", function () {
         console.log(response);
 
         for (var i = 1; i <= response.businesses.length; i++) {
-            $("#Restult" + i).text("");
+            if (yelpSearch == "") {
+                $("#searchResults").attr("style", "display: none;");
+                break;
+            }
             
             var restaurantImage = $("<img src='' alt='' id='restaurantImage" + i + "' style= 'height: 90px; width: 90px; border-radius: 50%; margin: 5px;'>");
 
@@ -59,5 +65,21 @@ restaurantBtn.on("click", function () {
             $("#Result" + i).prepend($(restaurantImage));
         }
 
+
     })
+
 })
+
+$('.modal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+
+$('#Result1, #Result2, #Result3, #Result4, #Result5').on("click", function(){
+    
+    $('.modal').modal('show'); 
+})
+
+
+function populateModal(response) {
+
+}
