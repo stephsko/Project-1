@@ -185,5 +185,3 @@ restaurantBtn.on("click", function () {
     })
 
 })
-
-

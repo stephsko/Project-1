@@ -36,6 +36,7 @@ footer {
 .btn-block {
     background-color: lightgray;
     text-align: left;
+
 }
 
 
@@ -47,12 +48,16 @@ footer {
 }
 
 
+
 /* addd media queries */
  @media only screen and (max-width: 375px) {
     .header {
         display: flex;
-        height: 200px;
+        height: 100px;
     } 
+    .display-4 {
+        font-size: 2.5em;
+    }
     .col-12 {
         display: flex;
         
