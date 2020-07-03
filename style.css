@@ -65,4 +65,8 @@ footer {
     .footer {
         font-size: 20px;
     }
+    .rounded-pill { 
+        border-radius: 0 !important;  
+    }
+    
 }
