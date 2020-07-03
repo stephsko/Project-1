@@ -48,7 +48,7 @@ footer {
 
 
 /* addd media queries */
- @media only screen and (max-width: 600px) {
+ @media only screen and (max-width: 375px) {
     .header {
         display: flex;
         height: 200px;
@@ -59,6 +59,9 @@ footer {
     }
     .footer {
         font-size: 20px;
+    }
+    .rounded-pill { 
+        border-radius: 0 !important;  
     }
     
 }
