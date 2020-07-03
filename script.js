@@ -79,9 +79,11 @@ recipeBtn.on("click", function () {
 
         $('#Result1, #Result2, #Result3, #Result4, #Result5').on("click", function () {
             populateRecipeModal(response, event.currentTarget);
+            // $('.modal-dialog').css("modal-fade-transform: scale(.8)");
             $('.modal').modal('show');
             $('.modal').on('shown.bs.modal', function () {
-                $('#myInput').trigger('focus')
+                $('#Result1, #Result2, #Result3, #Result4, #Result5').trigger('focus');
+                
             })
         })
 
@@ -176,9 +178,12 @@ restaurantBtn.on("click", function () {
 
             $('#Result1, #Result2, #Result3, #Result4, #Result5').on("click", function () {
                 populateRestModal(response, event.currentTarget);
+                // $('.modal-dialog').css("modal-fade-transform: scale(.8)");
                 $('.modal').modal('show');
+                
                 $('.modal').on('shown.bs.modal', function () {
-                    $('#myInput').trigger('focus')
+                    $('#Result1, #Result2, #Result3, #Result4, #Result5').trigger('focus');
+                    
                 })
             })
         })
