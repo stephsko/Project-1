@@ -39,7 +39,6 @@ footer {
 
 }
 
-
 #searchResults {
     background-color: transparent;
     margin: auto;
@@ -50,7 +49,7 @@ footer {
 
 
 /* addd media queries */
- @media only screen and (max-width: 375px) {
+ @media only screen and (max-width: 770px) {
     .header {
         display: flex;
         height: 100px;
@@ -66,7 +65,7 @@ footer {
         font-size: 20px;
     }
     .rounded-pill { 
-        border-radius: 0 !important;  
+        border-radius: 30px !important;  
     }
     
 }
