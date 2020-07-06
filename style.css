@@ -4,16 +4,6 @@ body {
     clear: both;
 }
 
-footer {
-    position: fixed;
-    background-color: white;
-    font-size: 30px;
-    color:  rgb(104, 214, 80);
-    bottom: 0;
-    Width: 100%;
-    text-align: center;
-}
-
 .jumbotron {
     background-color: white;
     color: rgb(104, 214, 80);
@@ -46,10 +36,18 @@ footer {
     width: 50%; 
 }
 
-
+footer {
+    position: fixed;
+    background-color: white;
+    font-size: 30px;
+    color:  rgb(104, 214, 80);
+    bottom: 0;
+    Width: 100%;
+    text-align: center;
+}
 
 /* addd media queries */
- @media only screen and (max-width: 770px) {
+@media only screen and (max-width: 770px) {
     .header {
         display: flex;
         height: 100px;
@@ -69,3 +67,11 @@ footer {
     }
     
 }
+
+
+
+
+
+
+
+
