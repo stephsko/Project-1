@@ -36,6 +36,9 @@ Our responsive app helps users search for foods they are craving based off of an
 - Link button clicks to AJAX requests
 - Create and display search results based on which button is clicked
 
+### Deployd Link:
+https://stephsko.github.io/Project-1/
+
 ### Product:
 ![Screen Shot 2020-07-05 at 8 00 03 PM](https://user-images.githubusercontent.com/65914787/86546394-4495f080-befa-11ea-863b-cf89fc83b529.png)
 ![Screen Shot 2020-07-05 at 8 00 19 PM](https://user-images.githubusercontent.com/65914787/86546452-9b9bc580-befa-11ea-91c2-d62f4b5be3c6.png)
