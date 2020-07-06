@@ -36,6 +36,10 @@ body {
     width: 50%; 
 }
 
+.rounded-pill { 
+    border-radius: 30px !important;  
+}
+
 footer {
     position: fixed;
     background-color: white;
@@ -62,9 +66,7 @@ footer {
     .footer {
         font-size: 20px;
     }
-    .rounded-pill { 
-        border-radius: 30px !important;  
-    }
+    
     
 }
 
