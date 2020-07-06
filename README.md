@@ -4,7 +4,7 @@
 ## To Cook or Not to Cook
 
 ### Project Description:
-Our app helps users search for foods they are craving based off of an ingredient or dish (e.g. cheese, pizza) and brings up the top 5 search results in the respective category. You can search for any food or ingredient and choose either "search recipes" or "search restaurants." When you search for recipes and click on one, a modal will pop up with information on preparation time as well as serving size and the link to the recipe. When you search for restaurants, you will be prompted to share your location with the app to find restaurants nearby. By clicking on a restaurant of your choice, a modal will pop up containing the restaurant's address, phone number and link to their Yelp! page.
+Our responsive app helps users search for foods they are craving based off of an ingredient or dish (e.g. cheese, pizza) and brings up the top 5 search results in the respective category. You can search for any food or ingredient and choose either "search recipes" or "search restaurants." When you search for recipes and click on one, a modal will pop up with information on preparation time as well as serving size and the link to the recipe. When you search for restaurants, you will be prompted to share your location with the app to find restaurants nearby. By clicking on a restaurant of your choice, a modal will pop up containing the restaurant's address, phone number and link to their Yelp! page.
 
 ### User Story:
 - AS A person who is hungry for my favorite foods
@@ -26,6 +26,7 @@ Our app helps users search for foods they are craving based off of an ingredient
 ### API's used:
 - Yelp!
 - Spoonacular
+- Geolocation
 
 ### Breakdown of Tasks
 - Create HTML layout
@@ -39,3 +40,5 @@ Our app helps users search for foods they are craving based off of an ingredient
 ![Screen Shot 2020-07-05 at 8 00 03 PM](https://user-images.githubusercontent.com/65914787/86546394-4495f080-befa-11ea-863b-cf89fc83b529.png)
 ![Screen Shot 2020-07-05 at 8 00 19 PM](https://user-images.githubusercontent.com/65914787/86546452-9b9bc580-befa-11ea-91c2-d62f4b5be3c6.png)
 ![Screen Shot 2020-07-05 at 8 00 36 PM](https://user-images.githubusercontent.com/65914787/86546462-a5bdc400-befa-11ea-8fbe-954f0fa9c02a.png)
+![Screen Shot 2020-07-06 at 9 53 49 AM](https://user-images.githubusercontent.com/65914787/86607313-b90a7700-bf6e-11ea-81ad-97b67b0e7c37.png)
+![Screen Shot 2020-07-06 at 9 54 26 AM](https://user-images.githubusercontent.com/65914787/86607347-c1fb4880-bf6e-11ea-8a15-a4cb90c61d04.png)
